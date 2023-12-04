@@ -2,22 +2,20 @@
 
 int isMultiple(int n)
 {
-    if(!n || n % 3)return 0;
+    if (n % 3)
+    return 0;
     return 1;
-}
-
-int cut(int n)
-{
-    return n / 10 * 10;
 }
 
 int isInclude3(int n)
 {
-    if(n < 0)n *= -1;
+    if (n < 0)
+    n *= -1;
 
-    while(n > 0)
+    while (n > 0)
     {
-        if(n - cut(n) == 3)return 1;
+        if (isMultiple(n % 10))
+        return 1;
         n /= 10;
     }
 
@@ -26,11 +24,12 @@ int isInclude3(int n)
 
 void nabeatsu(int start, int goal)
 {
-    for(int i = start; i <= goal; i++)
+    for (int i = start; i <= goal; i++)
     {
         printf("%d", i);
         
-        if(isMultiple(i) || isInclude3(i))printf("^^;");
+        if (isMultiple(i) || isInclude3(i))
+        printf("^^;");
 
         printf(" ");
     }

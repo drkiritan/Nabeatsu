@@ -23,7 +23,7 @@ int main(void) {
         }
 
         while (n > 0) {
-            if (n - n / 10 * 10 == 3) {
+            if (n % 10 == 3) {
                 printf("^^;");
                 break;
             }
